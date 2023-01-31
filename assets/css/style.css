@@ -1,0 +1,11 @@
+img{
+    max-width: 100%;
+    height: auto;
+}
+header .logo-wrap a{
+    width: 110px;
+}
+header .logo-desc{
+    width: calc(100% - 111px);
+    padding: 0px 10px;
+}
