@@ -2,10 +2,101 @@ img{
     max-width: 100%;
     height: auto;
 }
+*{
+    box-sizing: border-box;
+}
+a,button,input[type="submit"]{
+    transition: all 0.3s;
+}
+body{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    line-height: normal;
+    color: #333;
+    background: #fff;
+}
+.list-style-none{
+    list-style: none;
+    padding-left: 0px;
+}
+.title18{
+    font-size: 18px;
+}
+.title14{
+    font-size: 14px;
+}
 header .logo-wrap a{
     width: 110px;
 }
 header .logo-desc{
     width: calc(100% - 111px);
     padding: 0px 10px;
+}
+
+header nav{
+    background: #333;
+}
+
+header nav > ul{
+    margin-bottom: 0px;
+}
+
+header nav > ul > li{
+    border-left: 2px groove #636363;
+    background: transparent;
+}
+
+header nav > ul > li:hover{
+    background: -webkit-gradient(linear,left top,left bottom,from(#70389C),to(#602D8D));
+}
+
+header nav > ul > li:first-child{
+    border-left: none;
+}
+
+header nav > ul > li > a{
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    text-decoration: none;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+    display: block;
+}
+
+header nav > ul > li > a:hover{
+    color: #fff;
+}
+
+.box1{
+    padding-top: 30px;
+}
+
+/* slider */
+
+#homeSlider .carousel-inner img{
+    height: 345px;
+    object-fit: cover;
+}   
+
+.new-arrivals-product{
+    margin: -5px;
+}
+
+.new-arrivals-product .product-item{
+    width: calc(50% - 10px);
+    box-shadow: 0px 0px 3px rgb(150 150 150);
+    margin: 5px;
+    padding: 15px;
+}
+
+.new-arrivals-product .product-item .img-wrap{
+    width: 100px;
+}
+
+.new-arrivals-product .product-item .info-wrap{
+    width: calc(100% - 100px);
+    padding: 0px 15px;
 }

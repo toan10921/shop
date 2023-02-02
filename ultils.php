@@ -1,9 +1,22 @@
 <?php
+
+define('VERSION', '1.0.0');
+
 class Ultils{
 
-    public static function dump($data){
-        echo "<pre>";
-        var_dump($data);
-        echo "</pre>";
+    public static function home_url($slug){
+        $home_url = "http://localhost/n2110l/shop/".$slug;
+        return $home_url;
     }
+
+    public static function root_dir(){
+        $root_dir = $_SERVER['DOCUMENT_ROOT']."/n2110l/shop/";
+        return $root_dir;
+    }
+}
+
+function dump($data){
+    echo "<pre>";
+    var_dump($data);
+    echo "</pre>";
 }
