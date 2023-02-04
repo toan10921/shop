@@ -1,0 +1,4 @@
+.box-header::after
+{
+    display: none;
+}
