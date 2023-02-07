@@ -1,7 +1,7 @@
 <?php
 require_once '../ultils.php';
 require_once '../config.php';
-require_once Ultils::root_dir().'/classes/pagination.php';
+require_once Ultils::root_dir() . '/classes/pagination.php';
 $assets_url = Ultils::home_url('assets/');
 if (isset($_POST['action'])) {
   $action = $_POST['action'];
@@ -48,15 +48,20 @@ $connect = new Connect();
   <link rel="stylesheet" href="<?php echo $assets_url; ?>plugins/toastr/toastr.min.css">
   <!-- custom style -->
   <link rel="stylesheet" href="<?php echo $assets_url; ?>css/admin.css">
+  <!-- jQuery -->
+  <script src="<?php echo $assets_url; ?>plugins/jquery/jquery.min.js"></script>
+  <!-- jQuery UI 1.11.4 -->
+  <script src="<?php echo $assets_url; ?>plugins/jquery-ui/jquery-ui.min.js"></script>
+  <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
   <div class="wrapper">
-
-    <!-- Preloader -->
+<!-- 
+    Preloader
     <div class="preloader flex-column justify-content-center align-items-center">
       <img class="animation__shake" src="<?php echo $assets_url; ?>dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
-    </div>
+    </div> -->
 
     <?php require_once './templates/menu.php' ?>
 
@@ -111,11 +116,6 @@ $connect = new Connect();
   </div>
   <!-- ./wrapper -->
 
-  <!-- jQuery -->
-  <script src="<?php echo $assets_url; ?>plugins/jquery/jquery.min.js"></script>
-  <!-- jQuery UI 1.11.4 -->
-  <script src="<?php echo $assets_url; ?>plugins/jquery-ui/jquery-ui.min.js"></script>
-  <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
   <script>
     $.widget.bridge('uibutton', $.ui.button)
   </script>
@@ -146,9 +146,11 @@ $connect = new Connect();
   <!-- AdminLTE App -->
   <script src="<?php echo $assets_url; ?>dist/js/adminlte.js"></script>
   <!-- AdminLTE for demo purposes -->
-  <!-- <script src="<?php // echo $assets_url; ?>dist/js/demo.js"></script> -->
+  <!-- <script src="<?php // echo $assets_url; 
+                    ?>dist/js/demo.js"></script> -->
   <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-  <!-- <script src="<?php // echo $assets_url; ?>dist/js/pages/dashboard.js"></script> -->
+  <!-- <script src="<?php // echo $assets_url; 
+                    ?>dist/js/pages/dashboard.js"></script> -->
 
   <script>
     $(function() {

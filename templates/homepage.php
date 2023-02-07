@@ -29,7 +29,7 @@ $products = $tbl_products->get_products(null, null, 'id', 'desc', 4);
                                 <div class="info-wrap">
                                     <h3 class="brand-name title18 text-uppercase fw-bold"><?php echo $product['brandName'] ?></h3>
                                     <h4 class="product-name title14"><?php echo $product['productName'] ?></h4>
-                                    <a href="<?php echo Ultils::home_url('product.php?id=' . $product['id']); ?>" class="btn btn-primary">View</a>
+                                    <a href="<?php echo Ultils::home_url('product-detail.php?id=' . $product['id']); ?>" class="btn btn-primary">View</a>
                                 </div>
                             </div>
                         <?php

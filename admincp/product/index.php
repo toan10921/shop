@@ -10,6 +10,9 @@ if(isset($_GET['action'])){
         case 'create':
             require_once 'create-product.php';
             break;    
+        case 'edit':
+            require_once 'edit-product.php';
+            break;    
     }
 }else{
     require_once 'list-product.php';
