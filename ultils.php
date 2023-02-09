@@ -13,6 +13,10 @@ class Ultils{
         $root_dir = $_SERVER['DOCUMENT_ROOT']."/n2110l/shop/";
         return $root_dir;
     }
+
+    public static function format_number($number){
+        return number_format($number, 0, ',', '.') . ' đ';
+    }
 }
 
 function dump($data){

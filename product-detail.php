@@ -4,7 +4,7 @@ require_once './ultils.php';
 require_once './classes/tbl_config.php';
 require_once './classes/tbl_product.php';
 require_once './classes/tbl_category.php';
-
+session_start();
 $connect = new Connect();
 
 $tbl_product = new Product($connect);
@@ -69,15 +69,16 @@ require_once './templates/header.php';
         $('#add_cart').on('submit', function(e) {
             e.preventDefault();
             let cart_sessionid = getCookie('cart_sessionid');
+
             if (cart_sessionid == '' || cart_sessionid == null) {
                 cart_sessionid = makeid(10);
             }
 
             if (cart_sessionid) {
-                // set cookie
-                setCookie('cart_sessionid', cart_sessionid, 10);
+                   // set cookie
+                   setCookie('cart_sessionid', cart_sessionid, 10);
                 // xu ly logic oday
-                var quantity = $(this).find('input').val();
+                var quantity = $(this).find('input').val(); // this => bieu dien cho form #add_cart
                 var id = <?php echo $product['id']; ?>;
                 var params = {
                     id: id,
@@ -86,12 +87,14 @@ require_once './templates/header.php';
                 };
                 var query = $.param(params);
                 $.ajax({
-                    url: '<?php echo Ultils::home_url('add-cart.php') ?>'+ '?' + query,
+                    url: '<?php echo Ultils::home_url('add-cart.php') ?>' + '?' + query,
                     type: 'get',
                     success: function(data) {
-                        console.log(data);
+                        if(data === '1'){
+                            alert("Them gio hang thanh cong");
+                        }
                     },
-                    error(error) {
+                    error: function(error) {
                         console.log(error);
                     }
                 });

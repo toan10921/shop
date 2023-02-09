@@ -2,7 +2,7 @@
 require_once './config.php';
 require_once './ultils.php';
 require_once './classes/tbl_config.php';
-
+session_start();
 $connect = new Connect();
 
 require_once './templates/header.php';

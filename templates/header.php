@@ -52,17 +52,28 @@ $sub_title = $config_tbl->get_record('shop_sub_title');
                     <div class="cart-wrap">
                         <a href="cart.php">
                             <i class="fas fa-shopping-cart"></i>
-                            <span>Cart: </span>
-                            <b class="error">$ 0</b>
+                            <span>Cart</span>
                         </a>
                     </div>
                     <div class="login-wrap">
-                        <a href="login.php">
-                            <i class="fas fa-user"></i>
-                            <span>Login</span></a>
-                        <a href="register.php">
-                            <i class="fas fa-user-plus"></i>
-                            <span>Register</span></a>
+                        <?php
+                            if(isset($_SESSION['customer']) && !empty($_SESSION['customer'])){
+                                ?>
+                                <a href="logout.php">
+                                        <i class="fas fa-user"></i>
+                                        <span>Logout</span></a>
+                                <?php
+                            }else{
+                                ?>
+                                <a href="login.php">
+                                    <i class="fas fa-user"></i>
+                                    <span>Login</span></a>
+                                <a href="register.php">
+                                    <i class="fas fa-user-plus"></i>
+                                    <span>Register</span></a>
+                                <?php
+                            }
+                        ?>
                     </div>
                 </div>
             </div>
